@@ -78,7 +78,7 @@ def analyze_server(CPUIdlePerThreshold, MemAvaiPerThreshold, DiskFreePerThreshol
     data = os.popen('df -h').readlines()
     root = data[1].split()
     freeSpaceVal = 100 - int(root[4][:-1])
-    freeSpace = "Free Space: %s"%(freeSpaceVal)
+    freeSpace = "Free Space: %s"%(freeSpaceVal) + "%"
 
     data = os.popen('iostat').readlines()
     cpu = data[3].split()
